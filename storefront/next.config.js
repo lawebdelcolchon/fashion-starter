@@ -12,7 +12,7 @@ const nextConfig = {
   experimental: {
     staticGenerationRetryCount: 3,
     staticGenerationMaxConcurrency: 1,
-    serverActions: true
+    serverActions: {} // ✅ Corrige el error "Expected object, received boolean"
   },
 
   images: {
@@ -33,6 +33,7 @@ const nextConfig = {
     config.resolve.alias["@components"] = path.resolve(__dirname, "src/components")
     config.resolve.alias["@lib"] = path.resolve(__dirname, "src/lib")
     config.resolve.alias["@modules"] = path.resolve(__dirname, "src/modules")
+    config.resolve.alias["@hooks"] = path.resolve(__dirname, "src/hooks") // ✅ alias necesario
     return config
   },
 }
