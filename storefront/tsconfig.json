@@ -20,7 +20,8 @@
       "@/*": ["*"],
       "@lib/*": ["lib/*"],
       "@modules/*": ["modules/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"]         // ✅ necesario para hooks/cart, hooks/country-code
     },
 
     "plugins": [
