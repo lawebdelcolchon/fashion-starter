@@ -1,3 +1,4 @@
+const path = require("path")
 const checkEnvVariables = require("./check-env-variables")
 
 checkEnvVariables()
@@ -7,10 +8,13 @@ checkEnvVariables()
  */
 const nextConfig = {
   reactStrictMode: true,
+
   experimental: {
     staticGenerationRetryCount: 3,
     staticGenerationMaxConcurrency: 1,
+    serverActions: true
   },
+
   images: {
     remotePatterns: [
       {
@@ -22,6 +26,14 @@ const nextConfig = {
         hostname: "fashion-starter-demo.s3.eu-central-1.amazonaws.com",
       },
     ],
+  },
+
+  webpack: (config) => {
+    config.resolve.alias["@"] = path.resolve(__dirname, "src")
+    config.resolve.alias["@components"] = path.resolve(__dirname, "src/components")
+    config.resolve.alias["@lib"] = path.resolve(__dirname, "src/lib")
+    config.resolve.alias["@modules"] = path.resolve(__dirname, "src/modules")
+    return config
   },
 }
 
