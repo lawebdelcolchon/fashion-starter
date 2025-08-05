@@ -21,7 +21,7 @@
       "@lib/*": ["lib/*"],
       "@modules/*": ["modules/*"],
       "@components/*": ["components/*"],
-      "@hooks/*": ["hooks/*"]         // ✅ necesario para hooks/cart, hooks/country-code
+      "@hooks/*": ["hooks/*"]
     },
 
     "plugins": [
